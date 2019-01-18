@@ -1,7 +1,11 @@
 set e+x
 
-# build image with Cypress dependencies
-LOCAL_NAME=cypress/base:10
+REPOSITORY=cypress/base
+MAJOR_VERSION=10
+MINOR_VERSION=15
 
-echo "Building $LOCAL_NAME"
-docker build -t $LOCAL_NAME .
+echo "Building $REPOSITORY:$MAJOR_VERSION"
+docker build -t $REPOSITORY:$MAJOR_VERSION .
+
+echo "Building $REPOSITORY:$MAJOR_VERSION.$MINOR_VERSION"
+docker build -t $REPOSITORY:$MAJOR_VERSION.$MINOR_VERSION .
